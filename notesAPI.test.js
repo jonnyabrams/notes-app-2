@@ -14,4 +14,9 @@ describe('notes API class', () => {
     })
   })
 
+  it('creates a note from the backend', async () => {
+    const api2 = new NotesAPI;
+    
+  })
+
 })
