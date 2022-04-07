@@ -12,16 +12,17 @@ class NotesView {
   }
 
   addNewNote() {
-    console.log('dkfj')
-    console.log(this.input.value)
-    console.log(JSON.stringify(this.input.value))
+    // try stringify'ing becofe the
     this.api.uploadNotes(this.input.value);
     this.input.value = '';
     this.displayNotes();
   }
 
-  displayNotes() {
+  async displayNotes() {
     document.querySelectorAll('.note').forEach(element => element.remove());
+
+    const serverData = await this.api.loadNotes();
+    this.model.setNotes(serverData);
 
     const notes = this.model.getNotes();
 

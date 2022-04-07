@@ -1,9 +1,10 @@
 class NotesAPI {
 
-  loadNotes(callback) {
-    fetch('http://localhost:3000/notes')
-    .then(response => response.json())
-    .then(data => callback(data))
+  async loadNotes() {
+    const response = await fetch('http://localhost:3000/notes')
+    return response.json()
+    // .then(data => callback(data));
+    // 
   }
 
   uploadNotes(data) {
@@ -12,7 +13,7 @@ class NotesAPI {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ "content": data }),
     })
   }
 
