@@ -25,12 +25,14 @@ class NotesView {
     this.model.setNotes(serverData);
 
     const notes = this.model.getNotes();
+    console.log(notes);
 
     notes.forEach(note => {
       const noteEl = document.createElement('div');
       noteEl.innerText = note;
       noteEl.className = 'note';
       this.mainContainerEl.append(noteEl);
+  
     })
   }
 }
