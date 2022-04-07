@@ -16,7 +16,7 @@ class NotesModel {
   }
 
   setNotes(note) {
-    this.notes = note; // Check whether the push is doing the right behaviour
+    this.notes = note;
   }
 }
 

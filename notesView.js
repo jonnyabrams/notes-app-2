@@ -11,9 +11,9 @@ class NotesView {
     });
   }
 
-  addNewNote() {
+  async addNewNote() {
     // try stringify'ing becofe the
-    this.api.uploadNotes(this.input.value);
+    await this.api.uploadNotes(this.input.value);
     this.input.value = '';
     this.displayNotes();
   }
